@@ -11,11 +11,7 @@ Insert gif or link to demo
 
 ## Features
 
-- Get all animal
-- Get animal by enclosure id
-- Post add animal
-- Put update animal
-- Delete animal by id
+- Spring Boot Web Api
 
 ## API Reference Animal
 
@@ -190,7 +186,6 @@ Insert gif or link to demo
 | :--------         | :-------  | :-------------------------------- |
 | `id_food`         | `int`     | **Required**. Id of food          |
 | `idAnimal`        | `int`     | **Required**. Id of animal        |
-| `id_status`       | `int`     | **Required**. Id of status        |
 | `time`            | `string`  | **Required**. Timestamp           |
 
 
