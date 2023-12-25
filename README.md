@@ -1,7 +1,7 @@
 
 # Virtual Zoo Management System Web Api
 
-This is a team project for the school's OOP course. The goal is to create a management system for a zoo with a web-based interface.
+This is a team project for the school's OOP course. The goal is to create a management system for a zoo.
 
 ![](https://hackmd.io/_uploads/BkA37eDvp.png)
 
