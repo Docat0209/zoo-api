@@ -1,17 +1,29 @@
 
-# Virtual Zoo Management System
+# Virtual Zoo Management System Web Api
 
 This is a team project for the school's OOP course. The goal is to create a management system for a zoo with a web-based interface.
 
+![](https://hackmd.io/_uploads/BkA37eDvp.png)
 
-## Demo
+## Deployment
 
-Insert gif or link to demo
+Clone the project
 
+```bash
+  git clone https://github.com/Docat0209/zoo-api
+```
 
-## Features
+Run ["zoo.sql"](./zoo.sql) on your mysql server
 
-- Spring Boot Web Api
+Change ["application.properties"](./src/main/resources/application.properties) database username and password
+
+Run server (mvn request)
+
+```bash
+  cd zoo-api
+  mvn install
+  mvn exec:java -Dexec.mainClass=com.zoo.zoomanagement.ZooManagementApplication
+```
 
 ## API Reference Animal
 
@@ -94,7 +106,7 @@ Insert gif or link to demo
 | :--------         | :-------  | :--------------------------------     |
 | `id_zoo`          | `int`     | **Required**. Id of zoo               |
 | `name`            | `string`  | **Required**. enclosure name          |
-| `introduction`    | `string`  | **Required**. enclosure introduction  |
+| `introduce`    | `string`  | **Required**. enclosure introduction  |
 
 #### Put update enclosure
 
@@ -107,7 +119,7 @@ Insert gif or link to demo
 | `id_enclosure`    | `int`     | **Required**. Id of enclosure to edit |
 | `id_zoo`          | `int`     | **Required**. Id of zoo               |
 | `name`            | `string`  | **Required**. enclosure name          |
-| `introduction`    | `string`  | **Required**. enclosure introduction  |
+| `introduce`    | `string`  | **Required**. enclosure introduction  |
 
 #### Delete enclosure by id
 
@@ -189,12 +201,5 @@ Insert gif or link to demo
 | `time`            | `string`  | **Required**. Timestamp           |
 
 
-## Deployment
-
-Clone the project
-
-```bash
-  git clone https://github.com/Docat0209/zoo-management
-```
 
 

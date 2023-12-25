@@ -13,19 +13,23 @@ public class EnclosureService {
     @Autowired
     private EnclosureRepository repository;
     
+    // add enclosure
     public Enclosure saveEnclosure(Enclosure enclosure){
         return repository.save(enclosure);
     }
 
+    // get all enclosure
     public List<Enclosure> findAllEnclosure(){
         return repository.findAll();
     }
 
+    // delete enclosure
     public String deleteEnclosureById(int id){
         repository.deleteById(id);
         return id + " Enclosure Removed";
     }
 
+    // update enclosure
     public Enclosure updateEnclosure(Enclosure enclosure){
         Enclosure existing=repository.findById(enclosure.getId_enclosure()).orElse(null);
         existing.setId_zoo(enclosure.getId_zoo());

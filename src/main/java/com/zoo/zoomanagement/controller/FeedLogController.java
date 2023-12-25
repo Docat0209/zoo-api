@@ -1,5 +1,6 @@
 package com.zoo.zoomanagement.controller;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,11 +18,15 @@ public class FeedLogController {
     @Autowired
     private FeedLogService service;
 
+    // get feedlog by animal id
     @GetMapping("/feedLog/animal/{id}")
-    public List<FeedLog> getAllFeedLog(@PathVariable int id){
-        return service.findAllFeedLogByAnimalId(id);
+    public HashMap<String,List<FeedLog>> getAllFeedLog(@PathVariable int id){
+        HashMap<String,List<FeedLog>> map = new HashMap<>();
+        map.put("data", service.findAllFeedLogByAnimalId(id));
+        return map;
     }
 
+    // add feedlog
     @PostMapping("/feedLog/add")
     public FeedLog addFeedLog(@RequestBody FeedLog feed_log){
         return service.saveFeedLog(feed_log);

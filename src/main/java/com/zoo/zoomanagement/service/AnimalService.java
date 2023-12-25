@@ -12,24 +12,28 @@ public class AnimalService {
     @Autowired
     private AnimalRepository repository;
     
-
+    // add animal
     public Animal saveAnimal(Animal animal){
         return repository.save(animal);
     }
 
+    // get all animal
     public List<Animal> findAllAnimal(){
         return repository.findAll();
     }
 
+    // get animal by enclosure id
     public List<Animal> findAllAnimalByEnclosureId(int id){
         return repository.findByIdEnclosure(id);
     }
 
+    // delete animal by id
     public String deleteAnimalById(int id){
         repository.deleteById(id);
         return id + " Animal Removed";
     }
 
+    // upgrade animal
     public Animal updateAnimal(Animal animal){
         Animal existing=repository.findById(animal.getId_animal()).orElse(null);
         existing.setId_animal_type(animal.getId_animal_type());

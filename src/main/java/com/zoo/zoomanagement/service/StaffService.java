@@ -13,19 +13,23 @@ public class StaffService {
     @Autowired
     private StaffRepository repository;
     
+    // add staff
     public Staff saveStaff(Staff staff){
         return repository.save(staff);
     }
 
+    // get all staff
     public List<Staff> findAllStaff(){
         return repository.findAll();
     }
 
+    // get staff by id
     public String deleteStaffById(int id){
         repository.deleteById(id);
         return id + " Staff Removed";
     }
 
+    // update staff
     public Staff updateStaff(Staff staff){
 
         Staff existing=repository.findById(staff.getId_staff()).orElse(null);

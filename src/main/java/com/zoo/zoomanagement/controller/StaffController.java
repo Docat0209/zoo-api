@@ -1,5 +1,6 @@
 package com.zoo.zoomanagement.controller;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,21 +20,27 @@ public class StaffController {
     @Autowired
     private StaffService service;
 
+    // get all staff
     @GetMapping("/staff")
-    public List<Staff> getAllStaff(){
-        return service.findAllStaff();
+    public HashMap<String,List<Staff>> getAllStaff(){
+        HashMap<String,List<Staff>> map = new HashMap<>();
+        map.put("data", service.findAllStaff());
+        return map;
     }
 
+    // add staff
     @PostMapping("/staff/add")
     public Staff addStaff(@RequestBody Staff staff){
         return service.saveStaff(staff);
     }
     
+    // update staff
     @PutMapping("/staff/update")
     public Staff updateStaff(@RequestBody Staff staff) {
         return service.updateStaff(staff);
     }
 
+    // delete staff
     @DeleteMapping("/staff/delete/{id}")
     public String deleteStaffById(@PathVariable int id) {
         return service.deleteStaffById(id);

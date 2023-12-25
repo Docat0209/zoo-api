@@ -4,6 +4,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import com.zoo.zoomanagement.model.Animal;
+
 import java.util.List;
 
 @Repository

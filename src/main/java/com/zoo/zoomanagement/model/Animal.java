@@ -1,5 +1,4 @@
 package com.zoo.zoomanagement.model;
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -23,7 +22,7 @@ public class Animal {
     private int id_animal;
     private int id_animal_type;
     private int id_zoo;
-    @Column(name="id_enclosure")
+    @Column(name = "id_enclosure")
     private int idEnclosure;
     private int id_status;
     private String name;
